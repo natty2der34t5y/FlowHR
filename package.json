@@ -1,0 +1,22 @@
+{
+  "name": "cypress-e2e-framewokr",
+  "version": "1.0.0",
+  "description": "E2E Framework Testing Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "cypress:open": "cypress open"
+  },
+  "keywords": [
+    "e2e",
+    "automation",
+    "framework",
+    "cypress"
+  ],
+  "author": "victoriasantos",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^10.11.0",
+    "cypress-xpath": "^2.0.1"
+  }
+}
