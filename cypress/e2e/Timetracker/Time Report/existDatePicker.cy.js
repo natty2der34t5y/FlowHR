@@ -1,6 +1,6 @@
 //done
 
-describe('tableContent', () => {
+describe('existDatePicker', () => {
     it('passes', () => {
         cy.login('sofis@gmail.com','SofiA1234!')
 
@@ -14,21 +14,12 @@ describe('tableContent', () => {
             .click()
 
         cy.get('.ant-menu-title-content')
-            .contains('Review timesheets')
+            .contains('Time report')
             .click()
         
-        cy.get('table')
+        cy.get('.ant-picker-input')
             .should('exist')
 
-        cy.get('.ant-table-thead')
-            .should('contain','Name')
-            .and('contain','Hours')
-            .and('contain','Project')
-            .and('contain','Start Date')
-            .and('contain','End Date')
-            .and('contain','Status')
-            .and('contain','Actions')
     
-            
     })
 })

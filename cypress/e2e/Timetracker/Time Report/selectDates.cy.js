@@ -1,6 +1,6 @@
 //done
 
-describe('tableContent', () => {
+describe('selectDates', () => {
     it('passes', () => {
         cy.login('sofis@gmail.com','SofiA1234!')
 
@@ -14,21 +14,22 @@ describe('tableContent', () => {
             .click()
 
         cy.get('.ant-menu-title-content')
-            .contains('Review timesheets')
+            .contains('Time report')
             .click()
         
-        cy.get('table')
+        cy.get('.ant-picker-input')
+            .eq(0)
             .should('exist')
+            .click()
 
-        cy.get('.ant-table-thead')
-            .should('contain','Name')
-            .and('contain','Hours')
-            .and('contain','Project')
-            .and('contain','Start Date')
-            .and('contain','End Date')
-            .and('contain','Status')
-            .and('contain','Actions')
+        cy.get('.ant-picker-cell-inner')
+            .first()
+            .click()
+
+        cy.get('.ant-picker-cell-inner')
+            .last()
+            .click()
+
     
-            
     })
 })

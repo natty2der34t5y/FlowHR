@@ -1,6 +1,6 @@
 //done
 
-describe('tableContent', () => {
+describe('filterByPeriodicity', () => {
     it('passes', () => {
         cy.login('sofis@gmail.com','SofiA1234!')
 
@@ -14,21 +14,18 @@ describe('tableContent', () => {
             .click()
 
         cy.get('.ant-menu-title-content')
-            .contains('Review timesheets')
+            .contains('Time report')
             .click()
         
-        cy.get('table')
+        cy.get('.ant-select-selection-search-input')
             .should('exist')
+            .click()
 
-        cy.get('.ant-table-thead')
-            .should('contain','Name')
-            .and('contain','Hours')
-            .and('contain','Project')
-            .and('contain','Start Date')
-            .and('contain','End Date')
-            .and('contain','Status')
-            .and('contain','Actions')
-    
+        cy.get('.ant-select-item-option-content')
+            .should('contain','General')
+            .and('contain','Weekly')
             
+           
+    
     })
 })

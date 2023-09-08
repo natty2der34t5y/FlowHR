@@ -1,4 +1,4 @@
-//done
+//in progress
 
 describe('tableContent', () => {
     it('passes', () => {
@@ -14,7 +14,7 @@ describe('tableContent', () => {
             .click()
 
         cy.get('.ant-menu-title-content')
-            .contains('Review timesheets')
+            .contains('Review all timesheets')
             .click()
         
         cy.get('table')
@@ -23,7 +23,9 @@ describe('tableContent', () => {
         cy.get('.ant-table-thead')
             .should('contain','Name')
             .and('contain','Hours')
+            .and('contain','Team Leader')
             .and('contain','Project')
+            .and('contain','Area')
             .and('contain','Start Date')
             .and('contain','End Date')
             .and('contain','Status')

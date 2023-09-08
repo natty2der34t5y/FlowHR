@@ -9,52 +9,48 @@ describe('filterByState', () => {
             .contains('Arroyo Consulting (AC)')
             .click()
 
-        cy.xpath('//*[@id="root"]/section/section/main/div[3]/div[2]/div[2]/div/a/div/h5')
+        cy.get('.ant-card-body')
+            .contains('Timetracker')
             .click()
 
-        cy.xpath('//*[@id="root"]/section/aside/div/ul/li[6]/span[2]/a')
+        cy.get('.ant-menu-title-content')
+            .contains('Review timesheets')
             .click()
         
-        cy.xpath('//*[@id="root"]/section/section/main/div[3]/div[2]/div[3]/div/div[1]/span[2]')
-            .click()
-         
-        cy.xpath('//*[@id=\"root\"]/section/section/main/div[3]/div[2]/div[3]/div/div[2]/div/div/div/div[2]/div[1]/div/div/div[1]/div')
-            .contains('All statuses')
-            .click() 
-            
-        cy.xpath('//*[@id="root"]/section/section/main/div[3]/div[2]/div[3]/div/div[1]/span[2]')
-            .click()
-         
-        cy.xpath('//*[@id="root"]/section/section/main/div[3]/div[2]/div[3]/div/div[2]/div/div/div/div[2]/div[1]/div/div/div[2]/div')
-            .contains('Accepted')
-            .click()
-        
-        cy.xpath('//*[@id="root"]/section/section/main/div[3]/div[2]/div[3]/div/div[1]/span[2]')
-            .click()
-         
-        cy.xpath('//*[@id="root"]/section/section/main/div[3]/div[2]/div[3]/div/div[2]/div/div/div/div[2]/div[1]/div/div/div[3]/div')
-            .contains('Amending')
-            .click()
-
-        cy.xpath('//*[@id="root"]/section/section/main/div[3]/div[2]/div[3]/div/div[1]/span[2]')
-            .click()
-         
-        cy.xpath('//*[@id="root"]/section/section/main/div[3]/div[2]/div[3]/div/div[2]/div/div/div/div[2]/div[1]/div/div/div[4]/div')
-            .contains('Pending')
-            .click()
-
-        cy.xpath('//*[@id="root"]/section/section/main/div[3]/div[2]/div[3]/div/div[1]/span[2]')
-            .click()
-         
-        cy.xpath('//*[@id="root"]/section/section/main/div[3]/div[2]/div[3]/div/div[2]/div/div/div/div[2]/div[1]/div/div/div[5]/div')
+        cy.get('.ant-select-selection-item')
+            .eq(1)
             .contains('Sent')
             .click()
-        
-        cy.xpath('//*[@id="root"]/section/section/main/div[3]/div[2]/div[3]/div/div[1]/span[2]')
+
+        cy.get('.ant-select-item-option')
+            .eq(0)
+            .should('contain','All statuses')
             .click()
 
-        cy.xpath('//*[@id="root"]/section/section/main/div[3]/div[2]/div[3]/div/div[2]/div/div/div/div[2]/div[1]/div/div/div[6]/div')
-            .contains('Voided')
-            .click()
+        cy.get('.ant-select-item-option')
+            .eq(1)
+            .should('contain','Accepted')
+            .click({force: true})
+
+        cy.get('.ant-select-item-option')
+            .eq(2)
+            .should('contain','Amending')
+            .click({force: true})
+
+        cy.get('.ant-select-item-option')
+            .eq(3)
+            .should('contain','Pending')
+            .click({force: true})
+
+        cy.get('.ant-select-item-option')
+            .eq(4)
+            .should('contain','Sent')
+            .click({force: true})
+
+        cy.get('.ant-select-item-option')
+            .should('contain','Voided')
+            .eq(5)
+            .click({force: true})
+                    
     })
 })

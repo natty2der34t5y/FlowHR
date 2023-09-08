@@ -9,38 +9,26 @@ describe('statesView', () => {
             .contains('Arroyo Consulting (AC)')
             .click()
 
-        cy.xpath('//*[@id="root"]/section/section/main/div[3]/div[2]/div[2]/div/a/div/h5')
+        cy.get('.ant-card-body')
+            .contains('Timetracker')
             .click()
 
-        cy.xpath('//*[@id="root"]/section/aside/div/ul/li[6]/span[2]/a')
+        cy.get('.ant-menu-title-content')
+            .contains('Review timesheets')
             .click()
         
-        cy.xpath('//*[@id="root"]/section/section/main/div[3]/div[2]/div[3]/div/div[1]/span[2]')
+        cy.get('.ant-select-selection-item')
+            .eq(1)
+            .contains('Sent')
             .click()
 
-        cy.get('[class="rc-virtual-list-holder-inner"]')
-            .contains('All statuses')
-            .should('exist')
-
-        cy.get('[class="rc-virtual-list-holder-inner"]')
-            .contains('Accepted')
-            .should('exist')
-
-        cy.get('[class="rc-virtual-list-holder-inner"]')
-            .contains('Amending')
-            .should('exist')
-
-        cy.get('[class="rc-virtual-list-holder-inner"]')
-            .contains('Pending')
-            .should('exist')
-
-        cy.get('[class="rc-virtual-list-holder-inner"]')
-            .contains('Sent')
-            .should('exist')
-
-        cy.get('[class="rc-virtual-list-holder-inner"]')
-            .contains('Voided')
-            .should('exist')
+        cy.get('.ant-select-item-option')
+            .should('contain','All statuses')
+            .and('contain','Accepted')
+            .and('contain','Amending')
+            .and('contain','Sent')
+            .and('contain','Voided')
+            .and('contain','Pending')
         
     })
 })

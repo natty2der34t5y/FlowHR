@@ -1,6 +1,6 @@
-//in progress
+//done
 
-describe('checkViewState', () => {
+describe('filterByState', () => {
     it('passes', () => {
         cy.login('sofis@gmail.com','SofiA1234!')
 
@@ -14,25 +14,22 @@ describe('checkViewState', () => {
             .click()
 
         cy.get('.ant-menu-title-content')
-            .contains('Review timesheets')
+            .contains('Review all timesheets')
             .click()
         
         cy.get('.ant-select-selection-item')
             .eq(1)
             .contains('Sent')
             .click()
-         
+
         cy.get('.ant-select-item-option')
-            .contains('All statuses')
-            .click({force:true}) 
-            .wait(3000)
-
-        cy.get('.ant-table-cell-fix-right')
-            .eq(1)
-            .click({force:true})
-
-      
-              
-        
+            .should('contain','All statuses')
+            .and('contain','Accepted')
+            .and('contain','Amending')
+            .and('contain','Sent')
+            .and('contain','Voided')
+            .and('contain','Pending')
+           
+    
     })
 })
