@@ -14,7 +14,7 @@ describe('tableContent', () => {
             .click()
 
         cy.get('.ant-menu-title-content')
-            .contains('Review all timesheets')
+            .contains('Manage timesheets')
             .click()
         
         cy.get('table')
@@ -23,11 +23,8 @@ describe('tableContent', () => {
         cy.get('.ant-table-thead')
             .should('contain','Name')
             .and('contain','Hours')
-            .and('contain','Team Leader')
-            .and('contain','Project')
-            .and('contain','Area')
-            .and('contain','Start Date')
-            .and('contain','End Date')
+            .and('contain','Start date')
+            .and('contain','End date')
             .and('contain','Status')
             .and('contain','Actions')
     
