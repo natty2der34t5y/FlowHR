@@ -1,6 +1,6 @@
 //done
 
-describe('reviewTimesheets', () => {
+describe('existDatePicker', () => {
     it('passes', () => {
         cy.login('sofis@gmail.com','SofiA1234!')
 
