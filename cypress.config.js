@@ -10,19 +10,16 @@ module.exports = defineConfig({
   },
 });
 
-const mysql = require("mysql");
-function queryTestDb(query, config){
-  const connection = mysql.createConnection(config.env.db);
-  connection.connect();
-  return new Promise((resolve, reject) => {
-    connection.query(query, (error, results) => {
-      if (error) reject(error);
-      else {
-        connection.end();
-        return resolve(results);
-      }
-    })
-  })
-}
+require('@cypress/grep/src/plugin')(config);
+      on("task", {
+        runQuery: async (query) => {
+            return await db.runQuery(query);
+        }
+      });
+      on("task", {
+        runUpsertQuery: async (query) => {
+            return await db.runUpsertQuery(query);
+        }
+      });
 
 
