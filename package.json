@@ -16,7 +16,7 @@
   "author": "victoriasantos",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^10.11.0",
+    "cypress": "^13.1.0",
     "cypress-xpath": "^2.0.1",
     "mysql": "^2.18.1"
   }

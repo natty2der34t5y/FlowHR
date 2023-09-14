@@ -10,7 +10,7 @@ module.exports = defineConfig({
   },
 });
 
-require('@cypress/grep/src/plugin')(config);
+/*require('@cypress/grep/src/plugin')(config);
       on("task", {
         runQuery: async (query) => {
             return await db.runQuery(query);
@@ -20,6 +20,6 @@ require('@cypress/grep/src/plugin')(config);
         runUpsertQuery: async (query) => {
             return await db.runUpsertQuery(query);
         }
-      });
+      });*/
 
 
