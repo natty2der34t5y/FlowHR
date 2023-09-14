@@ -1,6 +1,6 @@
-/*in progress
+//done
 
-describe('sendTimesheets', () => {
+describe('checkEditState', () => {
     it('passes', () => {
         cy.login('sofis@gmail.com','SofiA1234!')
 
@@ -9,16 +9,18 @@ describe('sendTimesheets', () => {
             .contains('Arroyo Consulting (AC)')
             .click()
 
-        cy.xpath('//*[@id="root"]/section/section/main/div[3]/div[2]/div[2]/div/a/div/h5')
+        cy.get('.ant-card-body')
+            .contains('Timetracker')
             .click()
 
         cy.get('.ant-menu-title-content')
             .contains('Timesheets')
             .click()
+            .wait(2000)
+                   
+        cy.get('[aria-label="edit"]')
+            .eq(0)
+            .click()            
         
-        cy.get('button','.ant-table-filter-column')
-            .contains('Status')
-            
-
     })
-})*/
+})

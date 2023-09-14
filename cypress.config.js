@@ -1,7 +1,8 @@
 const { defineConfig } = require("cypress");
-const { error } = require("cypress/types/jquery");
+//const { error } = require("cypress/types/jquery");
 
 module.exports = defineConfig({
+  projectId: "t4xgn8",
   e2e: {
       setupNodeEvents(on, config) {
       // implement node event listeners here

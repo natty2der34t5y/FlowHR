@@ -1,6 +1,6 @@
-//in progress
+//done
 
-describe('Max hours', () => {
+describe('existSubmitButton', () => {
     it('passes', () => {
       cy.login('sofis@gmail.com','SofiA1234!')
   
@@ -9,8 +9,13 @@ describe('Max hours', () => {
         .contains('Arroyo Consulting (AC)')
         .click()
 
-      cy.xpath('//*[@id="root"]/section/section/main/div[3]/div[2]/div[2]/div/a/div/h5')
+      cy.get('.ant-card-body')
+        .contains('Timetracker')
         .click()
+
+      cy.get('button')
+        .contains('Submit')
+        .should('exist')  
       
     })
   })
