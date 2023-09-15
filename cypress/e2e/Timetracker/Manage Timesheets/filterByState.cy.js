@@ -30,56 +30,68 @@ describe('filterByState', () => {
             .eq(0)
             .contains('All statuses')
             .click()
+            .wait(1000)
 
         cy.get('.ant-select-item-option')
             .eq(0)
             .should('contain','Accepted')
             .click()
+            .wait(1000)
 
         cy.get('.ant-select-selection-item')
             .eq(0)
             .click()
+            .wait(1000)
 
         cy.get('.ant-select-item-option')
             .eq(1)
             .should('contain','Amending')
             .click()
+            .wait(1000)
 
         cy.get('.ant-select-selection-item')
             .eq(0)
             .click()
+            .wait(1000)
 
         cy.get('.ant-select-item-option')
             .eq(2)
             .should('contain','Pending')
             .click()
+            .wait(1000)
 
         cy.get('.ant-select-selection-item')
             .eq(0)
             .click()
+            .wait(1000)
 
         cy.get('.ant-select-item-option')
             .eq(3)
             .should('contain','Sent')
             .click()
+            .wait(1000)
 
         cy.get('.ant-select-selection-item')
             .eq(0)
             .click()
+            .wait(1000)
 
         cy.get('.ant-select-item-option')
             .eq(4)
             .should('contain','Voided')
             .click()
+            .wait(1000)
            
         cy.get('.ant-select-selection-item')
             .eq(0)
             .click()
+            .wait(1000)
 
         cy.get('.ant-select-item-option')
             .eq(5)
             .should('contain','All statuses')
             .click()
+            .wait(1000)
                     
     })
 })
