@@ -19,7 +19,6 @@ describe('editStartAndEndDate', () => {
 
       cy.wait(1000)
 
-      //cy.get('.ant-picker-input').eq(2)
       cy.get('input[name="startDate"]')
       .click()
       

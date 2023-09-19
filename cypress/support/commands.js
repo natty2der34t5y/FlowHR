@@ -23,3 +23,4 @@ Cypress.Commands.add('logout', () => {
     .click()
    
 })
+

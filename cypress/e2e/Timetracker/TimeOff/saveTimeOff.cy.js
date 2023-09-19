@@ -1,5 +1,5 @@
 describe('saveTimeOff', () => {
-
+    //cancel time off should be executed at the end
     it('passes', () => {
   
       cy.login('sofis@gmail.com','SofiA1234!')
@@ -42,8 +42,6 @@ describe('saveTimeOff', () => {
       .click({force:true})
 
       cy.get('[class="ant-btn ant-btn-primary sc-gtsrHT cjsSOE"]').eq(1).should('be.enabled')
-
-               
       .click({force:true})
     })
   
