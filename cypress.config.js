@@ -2,6 +2,8 @@ const { defineConfig } = require("cypress");
 //const { error } = require("cypress/types/jquery");
 
 module.exports = defineConfig({
+  viewportHeight: 1080,
+  viewportWidth: 1920,
   projectId: "t4xgn8",
   e2e: {
       setupNodeEvents(on, config) {
