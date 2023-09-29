@@ -2,9 +2,9 @@ describe('selectReason', () => {
 
     it('passes', () => {
   
-      cy.login('sofis@gmail.com','SofiA1234!')
+      cy.login('sofis@gmail.com','SofiA1234!') //Cypress Command for Login
   
-      cy.wait(1000)
+      cy.wait(1000) //Cypress wait of 1 second
 
       cy.get('[class="ant-select sc-eirqVv lhJykP ant-select-single ant-select-show-arrow"]')
       .click()
