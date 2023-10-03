@@ -1,4 +1,4 @@
-describe('4145', () => {
+describe('4203', () => {
 
     it('passes', () => {
 
@@ -15,16 +15,16 @@ describe('4145', () => {
 
       cy.get('a[href="/timetracker/timeOff"]').click()
 
-      cy.get('h2').
-      contains('List of time off').
-      should('exist')
+      cy.get('[class="ant-btn ant-btn-primary sc-gtsrHT cjsSOE"]').click()
 
-      cy.get('div').
-      contains('Accepted').
-      should('exist')
+      cy.wait(1000)
 
-      cy.get('svg').
-      should("have.attr","aria-required","true")
+      cy.get('#comment').type('This is a test comment 10 10 101 01')
+      
+      cy.get('#comment')
+      .should("have.attr","aria-required","true")
+
+      cy.get('button[ant-click-animating-without-extra-node="false"]').should('be.enabled')
 
     })
   
