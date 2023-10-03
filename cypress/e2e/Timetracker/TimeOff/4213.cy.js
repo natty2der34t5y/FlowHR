@@ -1,14 +1,10 @@
-describe('4145', () => {
+describe('4213', () => {
 
     it('passes', () => {
 
       cy.login('sofis@gmail.com','SofiA1234!')
   
       cy.wait(1000)
-
-      cy.get('h2').
-      contains('Sofi').
-      should('exist')
 
       cy.get('[class="ant-select sc-eirqVv lhJykP ant-select-single ant-select-show-arrow"]')
       .click()
@@ -19,17 +15,17 @@ describe('4145', () => {
 
       cy.get('a[href="/timetracker/timeOff"]').click()
 
-      cy.get('h2').
-      contains('List of time off').
-      should('exist')
+      cy.get('[class="ant-btn ant-btn-primary sc-gtsrHT cjsSOE"]').click()
 
-      cy.get('div').
-      contains('Accepted').
-      should('exist')
+      cy.wait(1000)
 
-      cy.get('svg').
-      should("have.attr","aria-hidden","true")
+      cy.get('#comment').type('Invalid')
+      
+      cy.get('#comment')
+      .should("have.attr","aria-required","true")
 
+      cy.get('[class="ant-btn ant-btn-primary sc-gtsrHT cWdTzK"').eq(1).should('be.disabled')
+     
     })
   
   })
