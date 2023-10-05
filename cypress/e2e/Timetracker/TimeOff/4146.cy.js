@@ -20,6 +20,10 @@ describe('4146', () => {
       cy.get('h2').
       contains('List of time off').
       should('exist')
+      
+      cy.get('h2').
+      contains('Sofi Arroyo').
+      should('exist')
 
       cy.get('div').
       contains('Sent').
