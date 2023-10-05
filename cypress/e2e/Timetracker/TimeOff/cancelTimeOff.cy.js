@@ -14,13 +14,9 @@ describe('cancelTimeOff', () => {
 
       cy.get('a[href="/timetracker/timeOff"]').click()
 
-      cy.get('[class="anticon anticon-close-circle sc-gDyJDg dmrAcv"]').eq(0).click()
+      cy.saveTimeOffToday()
 
-      cy.get('button[class="ant-btn ant-btn-primary"]').eq(1).click()
-      
-      cy.wait(1000)
-      
-      cy.get('div[class="sc-fGgQJw kzcXdM"]').eq(0).should("have.attr","color","canceled")
+      cy.cancelTimeOffToday()
 
     })
   
