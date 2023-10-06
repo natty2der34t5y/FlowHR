@@ -21,28 +21,28 @@ describe('collabCanSeeMsgs', () => {
             .first()
             .type('this is a test')
 
-        cy.get('button')
-            .contains('Send')
+        cy.get('button:contains(Send)')
+            .first()
             .click()
 
         cy.get('[placeholder="Type a comment..."]')
             .first()
             .type('this is a test')
 
-        cy.get('button')
-            .contains('Send')
+        cy.get('button:contains(Send)')
+            .first()
             .click()
 
-        cy.get('button')
-            .contains('Exit')
+        cy.get('button:contains(Exit)')
+            .first()
             .click()
 
         cy.get('[data-icon="comment"]')
             .first()
             .click()
 
-        cy.get('class')
-            .contains('View more comments')
+        cy.get('div:contains(View more comments)')
+            .last()
             .click()
 
         cy.get('[class="ant-comment-content-detail"]')
