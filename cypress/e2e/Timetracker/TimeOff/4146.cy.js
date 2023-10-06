@@ -14,13 +14,19 @@ describe('4146', () => {
       cy.get('a[href="/timetracker"]').click()
 
       cy.get('a[href="/timetracker/timeOff"]').click()
+      
+      cy.saveTimeOffToday()
 
       cy.get('h2').
       contains('List of time off').
       should('exist')
+      
+      cy.get('h2').
+      contains('Sofi Arroyo').
+      should('exist')
 
       cy.get('div').
-      contains('Accepted').
+      contains('Sent').
       should('exist')
 
       cy.get('.anticon-search').
@@ -39,6 +45,8 @@ describe('4146', () => {
       cy.get('td').
       contains('License').
       should('exist')
+
+      cy.cancelTimeOffToday()
       
       //
 

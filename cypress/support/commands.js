@@ -56,6 +56,8 @@ Cypress.Commands.add('saveTimeOffToday', () => {
 
   cy.get('[class="ant-btn ant-btn-primary sc-gtsrHT cjsSOE"]').eq(1).should('be.enabled')
   .click({force:true})
+
+  cy.wait(2000)
 })
 
 Cypress.Commands.add('cancelTimeOffToday', () => {
