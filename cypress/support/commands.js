@@ -47,6 +47,8 @@ Cypress.Commands.add('saveTimeOffToday', () => {
 
   cy.get('.ant-picker-cell-today').eq(1).click()
   
+  cy.get('input[type="file"]').attachFile('test.png')
+  
   cy.get('#comment').type('This is a test comment 10 01 10101')
   
   cy.wait(3000)

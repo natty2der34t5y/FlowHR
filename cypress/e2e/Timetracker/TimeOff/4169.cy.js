@@ -27,11 +27,47 @@ describe('4169', () => {
       contains('Sofi Arroyo').
       should('exist')
 
-      cy.get('[class="ant-btn ant-btn-primary sc-gtsrHT cjsSOE"]').click()
+      cy.saveTimeOffToday()
+
+      cy.wait(1000)
+      
+      cy.get('span[class="anticon anticon-form sc-lgWdIC cRRXke"]').eq(1).click() //Edit click
 
       cy.wait(1000)
 
-      cy.get('input[type="file"]').attachFile('test.png')
+      cy.get('input[type="file"]').attachFile('test_wrongformat.webp')
+
+      cy.wait(500)
+
+      cy.get('.ant-notification-notice-description')
+      .contains('Format file not allowed')
+      .should('exist')
+      
+      cy.get('input[type="file"]').attachFile('test_more5mb.jpg')
+      
+      cy.wait(500)
+      
+      cy.get('.ant-notification-notice-description')
+      .contains('File size cannot be larger than 5MB')
+      .should('exist')
+      cy.get('input[type="file"]').attachFile('test1.jpg')
+
+      cy.get('#comment').type('This is an edit comment 10 01 10101')
+  
+      cy.wait(1000)
+  
+      cy.get('button:contains(Send)').
+      should('be.enabled').
+      click()
+
+      cy.get('button:contains(Save)').
+      should('be.enabled').
+      click()
+
+      cy.wait(2000)
+
+      cy.cancelTimeOffToday()
+      //add more validations
   
     })
   

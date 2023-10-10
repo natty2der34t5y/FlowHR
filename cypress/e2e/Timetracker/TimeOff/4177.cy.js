@@ -25,22 +25,22 @@ describe('4177', () => {
       .contains('License').should('exist')//Cypress Assertion to check License option is available
       
       cy.get('.ant-select-dropdown')
-      .contains('Medical Leave').should('exist')
+      .contains('Medical Leave').should('exist')//Cypress Assertion to check Medical Leave option is available
       
       cy.get('.ant-select-dropdown')
-      .contains('Other').should('exist')
+      .contains('Other').should('exist')//Cypress Assertion to check Other option is available
 
       cy.get('.ant-select-dropdown')
-      .contains('Personal Emergency').should('exist')
+      .contains('Personal Emergency').should('exist')//Cypress Assertion to check Personal Emergency option is available
       
       cy.get('.ant-select-dropdown')
-      .contains('Vacation').should('exist')
+      .contains('Vacation').should('exist')//Cypress Assertion to check Vacation option is available
 
       cy.get('.ant-select-dropdown')
-      .contains('License').click()
+      .contains('License').click()//Select License option
 
       cy.get('#addPerson_reasonId')
-      .should("have.attr","aria-required","true")
+      .should("have.attr","aria-required","true") //Cypress Assertion to check Reason is a required field
       
     })
   
