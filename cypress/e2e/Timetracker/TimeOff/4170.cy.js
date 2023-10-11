@@ -1,6 +1,6 @@
 import 'cypress-file-upload'
 
-describe('4169', () => {
+describe('4170', () => {
 
     it('passes', () => {
 
@@ -35,22 +35,14 @@ describe('4169', () => {
 
       cy.wait(1000)
 
-      cy.get('input[type="file"]').attachFile('test_wrongformat.webp')
+      cy.get('a').
+      contains('test.png').
+      should('exist').
+      click()
 
-      cy.wait(500)
-
-      cy.get('.ant-notification-notice-description')
-      .contains('Format file not allowed')
-      .should('exist')
-      
-      cy.get('input[type="file"]').attachFile('test_more5mb.jpg')
-      
-      cy.wait(500)
-      
-      cy.get('.ant-notification-notice-description')
-      .contains('File size cannot be larger than 5MB')
-      .should('exist')
-      cy.get('input[type="file"]').attachFile('test1.jpg')
+      cy.get('.anticon-delete').
+      should('exist').
+      click()
 
       cy.get('#comment').type('This is an edit comment 10 01 10101')
   
@@ -68,7 +60,6 @@ describe('4169', () => {
 
       cy.cancelTimeOffToday()
       
-  
     })
   
   })

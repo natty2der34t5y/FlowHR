@@ -28,7 +28,9 @@ Cypress.Commands.add('logout', () => {
 
 Cypress.Commands.add('saveTimeOffToday', () => {
 
-  cy.get('[class="ant-btn ant-btn-primary sc-gtsrHT cjsSOE"]').click()
+  cy.get('button:contains(Add)').
+  should('be.enabled').
+  click()
 
   cy.wait(1000)
 
@@ -48,16 +50,18 @@ Cypress.Commands.add('saveTimeOffToday', () => {
   cy.get('.ant-picker-cell-today').eq(1).click()
   
   cy.get('input[type="file"]').attachFile('test.png')
-  
+
   cy.get('#comment').type('This is a test comment 10 01 10101')
   
   cy.wait(3000)
   
-  cy.get('[class="ant-btn ant-btn-primary sc-gtsrHT cjsSOE"').eq(1).should('be.enabled')
-  .click({force:true})
+  cy.get('button:contains(Send)').
+  should('be.enabled').
+  click()
 
-  cy.get('[class="ant-btn ant-btn-primary sc-gtsrHT cjsSOE"]').eq(1).should('be.enabled')
-  .click({force:true})
+  cy.get('button:contains(Save)').
+  should('be.enabled').
+  click()
 
   cy.wait(2000)
 })

@@ -6,8 +6,8 @@ describe('4149', () => {
   
       cy.wait(1000)
 
-      cy.get('[class="ant-select sc-eirqVv lhJykP ant-select-single ant-select-show-arrow"]')
-      .click()
+      cy.get('.ant-select-selector').
+      click()
 
       cy.contains('Arroyo Consulting (AC)').click()
 
