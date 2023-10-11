@@ -38,7 +38,10 @@ describe('4170', () => {
       cy.get('a').
       contains('test.png').
       should('exist').
-      click()
+      click() //Download file
+
+      cy.readFile("cypress/downloads/test.png") //Verify if file was downloaded
+
 
       cy.get('.anticon-delete').
       should('exist').
